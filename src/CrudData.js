@@ -152,6 +152,7 @@ const DataTable = () => {
             background: "beige",
             border: "none",
             borderRadius: "6px",
+            cursor: "pointer",
           }}
         >
           Add Data
@@ -171,8 +172,36 @@ const DataTable = () => {
               <td style={tableCellStyles}>{item.name}</td>
               <td style={tableCellStyles}>{item.email}</td>
               <td style={tableCellStyles}>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button
+                  style={{
+                    width: "120px",
+                    color: "#b380ff",
+                    background: "#ffffb3",
+                    border: "none",
+                    borderRadius: "6px",
+                    margin: "4px",
+                    padding: "4px",
+                    cursor: "pointer",
+                    fontSize: "16px",
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  style={{
+                    width: "120px",
+                    color: "#fff",
+                    background: "#ff66a3",
+                    border: "none",
+                    borderRadius: "6px",
+                    margin: "4px",
+                    padding: "4px",
+                    cursor: "pointer",
+                    fontSize: "16px",
+                  }}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
