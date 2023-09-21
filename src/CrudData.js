@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const DataTable = () => {
+const DataTable = ({ showAddModel, reload }) => {
   const [loader, setLoader] = useState(true);
   const [apiData, setApiData] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(2);
@@ -20,7 +20,7 @@ const DataTable = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [reload]);
 
   const handleSearchChange = (e) => {
     setSearchText(e.target.value.toLowerCase());
@@ -30,6 +30,10 @@ const DataTable = () => {
   const handleItemsPerPageChange = (e) => {
     setItemsPerPage(parseInt(e.target.value));
     setCurrentPage(1); // Reset to the first page when changing items per page
+  };
+
+  const handleOpenAddModel = () => {
+    showAddModel(true);
   };
 
   // Filter data based on the search input
@@ -148,12 +152,14 @@ const DataTable = () => {
         <button
           style={{
             width: "120px",
-            color: "blue",
-            background: "beige",
+            color: "#fff",
+            background: "#54B4D3",
             border: "none",
             borderRadius: "6px",
             cursor: "pointer",
+            fontSize: "16px",
           }}
+          onClick={handleOpenAddModel}
         >
           Add Data
         </button>
@@ -175,8 +181,8 @@ const DataTable = () => {
                 <button
                   style={{
                     width: "120px",
-                    color: "#b380ff",
-                    background: "#ffffb3",
+                    color: "#fff",
+                    background: "#3399ff",
                     border: "none",
                     borderRadius: "6px",
                     margin: "4px",
@@ -191,7 +197,7 @@ const DataTable = () => {
                   style={{
                     width: "120px",
                     color: "#fff",
-                    background: "#ff66a3",
+                    background: "#ff3300",
                     border: "none",
                     borderRadius: "6px",
                     margin: "4px",

@@ -1,0 +1,92 @@
+.model-container .model-backdrop,
+.model-container .model-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+}
+.model-container .model-content {
+  background-color: #fff;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  position: fixed;
+  top: 12%;
+  left: calc(50% - 200px);
+  z-index: 1000;
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+}
+
+.model-container .model-close {
+  color: #aaa;
+  width: 25px;
+  height: 27px;
+  text-align: center;
+  position: absolute;
+  right: 18px;
+  height: 5px;
+  top: -5px;
+  cursor: pointer;
+  font-size: 40px;
+  transition: 0.3s ease-in-out;
+}
+
+.model-container .model-close:hover {
+  color: #333;
+}
+.model-addData-form {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.model-addData-form .error-message {
+  width: 89%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background: #fc4b05;
+  font-size: 16px;
+  color: white;
+}
+.model-addData-form .success-message {
+  width: 89%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background: #28a000;
+  font-size: 16px;
+  color: white;
+}
+.model-addData-form .form-control {
+  width: 89%;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  background: #4bc5fa;
+  font-size: 14px;
+}
+
+.model-addData-form .form-control:focus {
+  outline: none;
+}
+.model-addData-form .submit-btn {
+  width: 95%;
+  color: black;
+  background: #78facf;
+  cursor: pointer;
+}
+
+.model-addData-form .submit-btn:hover {
+  background-color: #41e0c6;
+  font-size: 16px;
+}
