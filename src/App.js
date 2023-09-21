@@ -2,9 +2,12 @@ import "./App.css";
 import DataTable from "./CrudData";
 import AddModel from "./AddModel";
 import { useState } from "react";
+import EditModel from "./EditModel";
 
 function App() {
-  const [addModel, showAddModel] = useState(true);
+  const [addModel, showAddModel] = useState(false);
+  const [editModel, showEditModel] = useState(true);
+  const [user, setUser] = useState(false);
   const [reload, setReload] = useState(0);
   return (
     <div className="App">
@@ -13,7 +16,18 @@ function App() {
         show={addModel}
         setReload={setReload}
       />
-      <DataTable showAddModel={showAddModel} reload={reload} />
+      <EditModel
+        showModel={showEditModel}
+        show={editModel}
+        user={user}
+        setReload={setReload}
+      />
+      <DataTable
+        showAddModel={showAddModel}
+        setUser={setUser}
+        reload={reload}
+        showEditModel={showEditModel}
+      />
     </div>
   );
 }

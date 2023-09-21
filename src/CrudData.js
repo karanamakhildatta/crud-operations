@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const DataTable = ({ showAddModel, reload }) => {
+const DataTable = ({ showAddModel, reload, setUser, showEditModel }) => {
   const [loader, setLoader] = useState(true);
   const [apiData, setApiData] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(2);
@@ -34,6 +34,10 @@ const DataTable = ({ showAddModel, reload }) => {
 
   const handleOpenAddModel = () => {
     showAddModel(true);
+  };
+  const handleOpenEditModel = (user) => {
+    setUser(user);
+    showEditModel(true);
   };
 
   // Filter data based on the search input
@@ -190,6 +194,7 @@ const DataTable = ({ showAddModel, reload }) => {
                     cursor: "pointer",
                     fontSize: "16px",
                   }}
+                  onClick={() => handleOpenEditModel(item)}
                 >
                   Edit
                 </button>
