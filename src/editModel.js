@@ -4,7 +4,7 @@ import axios from "axios";
 
 const EditModel = ({ showModel, user, setReload, show }) => {
   const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
   const [user_id, setUserId] = useState(user._id);
   const [message, setMessage] = useState({});
 
@@ -42,9 +42,11 @@ const EditModel = ({ showModel, user, setReload, show }) => {
       showModel(false);
     } catch (error) {
       console.log(error);
-      setName("");
-      setEmail("");
-      showModel({});
+      let data = {
+        message: error.response.data.error,
+        class: "error-message",
+      };
+      setMessage(data);
     }
   };
 
